@@ -5,7 +5,7 @@ export const PostCreate = () => {
   const [title, setTitle] = useState('');
 
   const handleSave = async () => {
-    await axios.post('http://localhost:4000/posts', { title });
+    await axios.post('http://posts.com/posts/create', { title });
     setTitle('');
   };
 

@@ -7,7 +7,7 @@ export const PostList = () => {
 
   useEffect(() => {
     const getPosts = async () => {
-      const res = await axios.get('http://localhost:4002/posts');
+      const res = await axios.get('http://posts.com/posts');
       setPosts(res.data);
     };
     getPosts();

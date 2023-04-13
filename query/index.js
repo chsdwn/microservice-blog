@@ -43,13 +43,13 @@ app.listen(port, async () => {
   console.log(`Listening on ${port}`);
 
   const res = await axios
-    .get('http://localhost:4005/events')
+    .get('http://event-bus-srv:4005/events')
     .catch(() => console.log('An error occured to while fetching events.'));
 
-  if (!res.data) return;
-
-  for (let event of res.data) {
-    console.log('Processing event:', event.type);
-    handleEvent(event.type, event.data);
+  if (res.data) {
+    for (let event of res.data) {
+      console.log('Processing event:', event.type);
+      handleEvent(event.type, event.data);
+    }
   }
 });
